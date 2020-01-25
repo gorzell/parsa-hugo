@@ -38,6 +38,13 @@
         <button class="search-icon" type="submit"><i class="ti-search text-dark"></i></button>
       </form>
       {{ end }}
+      {{ if .IsTranslated }}
+      <nav class="LangNav">
+        {{ range .Translations }}
+        <a href="{{ .Permalink }}"><img width=64 src="{{ .Site.BaseURL }}/images/{{ .Language.Lang }}.png" alt="{{ .Language.LanguageName }}"></img></a>
+        {{ end}}
+      </nav>
+      {{ end }}
     </div>
   </nav>
 </header>
